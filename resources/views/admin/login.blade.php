@@ -3,8 +3,16 @@
 @section('content')
 <form action="{{ route('admin.login') }}" method="post">
   @csrf
-  <h4>Login admin</h4>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  <div class="row" style="margin-top: 10px;">
+    <div class="col-3 pv ph">
+      <img src="{{ asset('assets/img/logo.png') }}">
+    </div>
+
+    <div class="col-9 pv ph">
+      <h4><b>SMK SIROJUL HUDA 1</b></h4>
+    </div>
+  </div>
+  <p>Login Admin</p>
   <div class="form-group pt-2">
     <input type="text" name="username" class="form-control" placeholder="username *">
   </div>
