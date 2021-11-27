@@ -23,8 +23,8 @@
       <p>Mata pelajaran</p>
     </a>
   </li>
-  <li>
-    <a href="#!">
+  <li class="{{ Route::is('admin.teachers.*') ? 'active' : '' }}">
+    <a href="{{ route('admin.teachers.index') }}">
       <i class="nc-icon nc-badge"></i>
       <p>Guru</p>
     </a>
@@ -33,6 +33,12 @@
     <a href="{{ route('admin.students.index') }}">
       <i class="nc-icon nc-badge"></i>
       <p>Murid</p>
+    </a>
+  </li>
+  <li class="{{ Route::is('admin.users.*') ? 'active' : '' }}">
+    <a href="{{ route('admin.users.index') }}">
+      <i class="nc-icon nc-badge"></i>
+      <p>User Admin</p>
     </a>
   </li>
 </ul>

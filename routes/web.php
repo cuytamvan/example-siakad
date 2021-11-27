@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\Admin\TestTypeController;
+use App\Http\Controllers\Admin\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,6 +24,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
 
     Route::middleware('auth')->group(function() {
         Route::view('/', 'admin.dashboard')->name('dashboard');
+        Route::post('logout', [AdminAuthController::class, 'logout'])->name('logout');
 
         Route::resource('school-years', SchoolYearController::class)->except('show');
         Route::resource('students', StudentController::class)->except('show');
@@ -30,5 +32,6 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::resource('test-types', TestTypeController::class)->except('show');
         Route::resource('subjects', SubjectController::class)->except('show');
         Route::resource('teachers', TeacherController::class)->except('show');
+        Route::resource('users', UserController::class)->except('show');
     });
 });

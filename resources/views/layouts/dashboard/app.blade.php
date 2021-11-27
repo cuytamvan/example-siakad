@@ -91,7 +91,10 @@
                 </div>
               </li> --}}
               <li class="nav-item">
-                <a class="nav-link btn-rotate" href="javascript:;">
+                <form action="{{ route($type.'.logout') }}" id="logoutForm" method="POST">
+                  @csrf
+                </form>
+                <a class="nav-link btn-rotate logout" href="#!">
                   <i class="nc-icon nc-button-power"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Logout</span>
@@ -132,6 +135,12 @@
   <script src="{{ asset('assets/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
   <script src="{{ asset('assets/js/plugins/bootstrap-notify.js') }}"></script>
   <script src="{{ asset('assets/js/paper-dashboard.min.js?v=2.0.1') }}" type="text/javascript"></script>
+  <script>
+    $('.logout').click(function(e) {
+      e.preventDefault();
+      $('#logoutForm').submit();
+    })
+  </script>
 </body>
 
 </html>
