@@ -120,7 +120,7 @@
             </nav>
             <div class="credits ml-auto">
               <span class="copyright">
-                &copy; {{ date('Y') }}, made with <i class="fa fa-heart heart"></i> by cuytamvan
+                &copy; {{ date('Y') }}
               </span>
             </div>
           </div>
@@ -141,6 +141,7 @@
       $('#logoutForm').submit();
     })
   </script>
+  @yield('script')
 </body>
 
 </html>
